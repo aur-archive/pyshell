@@ -1,0 +1,21 @@
+post_install() {
+	post_upgrade
+}
+
+post_upgrade() {
+    #su -l -s /bin/sh -c "source /opt/pyshell/pyshell" $USER
+    cat >&2 <<EOF
+
+==> PyShell installation notes:
+    ----------------------------------------
+    To start using PyShell:
+        >> source /opt/pyshell/pyshell
+    ----------------------------------------
+
+==> PyShell documentation:
+    ----------------------------------------
+    type:
+        >> man pyshell
+    ----------------------------------------
+EOF
+}
